@@ -15,4 +15,7 @@ a=a*Number(str[i]);
   
 }
 
-console.log(a);
+const result = a ** 3;
+
+let resul = String(result);
+console.log(resul.substr(0, 2)); 
