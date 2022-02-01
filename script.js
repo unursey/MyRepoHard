@@ -1,21 +1,20 @@
-let num = 266219;
-console.log(typeof num);
+"use strict";
 
-let str = String(num);
-console.log(str); 
+const message = (arg) => {
+  let res;
+  if (typeof arg === "string") {
+    const maxLength = 30;
+    const str = arg.trim();
+    if (str.length > maxLength) {
+      res = str.substr(0, maxLength) + "...";
+    } else {
+      res = str;
+    }
+  }
+  return res;
+};
 
-console.log(str.length); 
-
-
-let a = 1;
-let i = 0;
-while (i<str.length) {
-a=a*Number(str[i]);  
-  i++;
-  
-}
-
-const result = a ** 3;
-
-let resul = String(result);
-console.log(resul.substr(0, 2)); 
+console.log(message("  ммммаленькая "));
+console.log(
+  message(" длииииииинная очееееееееееееееееень строкаааааааааааааа    ")
+);
