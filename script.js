@@ -1,21 +1,30 @@
-let num = 266219;
-console.log(typeof num);
+"use strict";
 
-let str = String(num);
-console.log(str); 
+const arr = ["67549", "2678", "4854", "3435", "778178", "1588", "46543"];
 
-console.log(str.length); 
-
-
-let a = 1;
-let i = 0;
-while (i<str.length) {
-a=a*Number(str[i]);  
-  i++;
-  
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i].startsWith("4") || arr[i].startsWith("2")) {
+    console.log(arr[i]);
+  }
 }
 
-const result = a ** 3;
+const divider = (rez) => {
+  let arr = [];
+  if (rez !== 1) {
+    arr.push(1);
+    for (let j = 2; rez >= j * j; j++) {
+      if (rez % j === 0) {
+        arr.push(j);
+      }
+    }
+  }
+  arr.push(rez);
+  return arr;
+};
 
-let resul = String(result);
-console.log(resul.substr(0, 2)); 
+for (let i = 2; i <= 100; i++) {
+  const n = divider(i);
+  if (n.length <= 2) {
+    console.log(`${i}: Делители этого числа: ${n.join(" и ")}`);
+  }
+}
